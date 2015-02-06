@@ -724,7 +724,7 @@ all of this, use a listener::
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->addEventListener(FormEvents::POST_SUBMIT, function ($event) {
+        $builder->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) {
             $event->stopPropagation();
         }, 900); // Always set a higher priority than ValidationListener
 
